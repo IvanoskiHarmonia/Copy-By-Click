@@ -13,7 +13,7 @@
 
 ## How To Download
 
-### no GitBash
+### No GitBash
 
  I would say the best way to get this app for people that do not have **GitBash** would be:
 
