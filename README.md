@@ -7,8 +7,8 @@
 - The easiest way to click and copy
 
 ## Table of contents
-- [Populate](@populate)
-- [How To Download](@how-to-download)
+- [Populate](#populate)
+- [How To Download](#how-to-download)
 
 ## How To Download
 
