@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="src/logo/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="src/logo/site.webmanifest">
+
+    <title>Copying Machine</title>
+
+    <style>
+        * {
+            font-family: 'Times New Roman', Times, serif;
+        }
+        ._copy {
+            cursor: pointer;
+            margin: 0;
+            padding: 0;
+            word-wrap: break-word;
+            text-justify: newspaper;
+            line-break: strict;
+            line-height: 20px;
+            font-size: 16px;
+            width: -webkit-fit-content;
+            width: -moz-fit-content;
+            width: fit-content;
+            height: -webkit-fit-content;
+            height: -moz-fit-content;
+            height: fit-content;
+        }
+        ._copy:hover {
+            border: 1px dashed burlywood;
+        }
+        ._copy:active {
+            border: 1px solid rgb(224, 64, 23);
+        }
+    </style>
+
+</head>
+<body>
+    <main>
+        <div id="container"></div>
+    </main>
+
+    <script>
+        const currentDate = new Date().toISOString().slice(0, 10);
+        const date = `${currentDate.slice(5, 7)}-${currentDate.slice(8, 10)}-${currentDate.slice(0, 4)}`;
+        
+        //populate the array as needed, as demonstated in the example below
+        //copies only the second element in each array when clicked.
+        let contents = [
+            [ 'name', 'ivanoskiHarmonia'],
+            [ 'date', date],
+            [ 'none', 'N/A'],
+        ];
+
+        window.onload = () => {
+            const html = contents.map(content => {
+                return '<p class="_copy" id="' + content[0] + '" onclick="copyElementText(this.id)">' + content[0] + ': ' + content[1] + '</p>';
+            })   
+
+            document.getElementById('container').innerHTML = html.join('');
+        }
+
+        async function copyElementText(id) {
+            var text = document.getElementById(id).innerText;
+            var elem = document.createElement("textarea");
+            document.body.appendChild(elem);
+            elem.value = text.substr(id.length+2);
+            elem.select();
+            document.execCommand("copy");
+            document.body.removeChild(elem);
+            document.title = id + ' Copied';
+        }
+    </script>
+</body>
+</html>
