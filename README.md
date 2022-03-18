@@ -7,8 +7,14 @@
 - The easiest way to click and copy
 
 ## Table of contents
+<<<<<<< HEAD
 
 - [How To Download](@how-to-download)
+=======
+- [How To Download](#how-to-download)
+- [Populate](#populate)
+- [How to Test](#how-to-test)
+>>>>>>> 78e054136a868e6614610bd5fa6322bda625f2ab
 
 - [Populate](@populate)
 
@@ -18,9 +24,15 @@
 
 ## How To Download
 
+<<<<<<< HEAD
 
 ### no Git Bush
 
+=======
+### No GitBash
+
+ I would say the best way to get this app for people that do not have **GitBash** would be:
+>>>>>>> 78e054136a868e6614610bd5fa6322bda625f2ab
 
 I would say the best way to get this app for people that do not have git bush would be:
 
@@ -34,21 +46,29 @@ I would say the best way to get this app for people that do not have git bush wo
 
 > Note: This way the favicon(**icon**) of this site won't work, but it won't affect anything else.
 
+<<<<<<< HEAD
 
 ### Git Bush
 
 
 If you have installed ```Git Bush```, by now I would guess that you already know at least a little bit about programming, and how to use it, so in that case:
 
+=======
+### GitBash
 
-``` git clone https://github.com/IvanoskiHarmonia/copy-by-click ```
+If you have installed ```GitBash```, by now I would guess that you already know at least a little bit about programming, and how to use it, so in that case: 
+>>>>>>> 78e054136a868e6614610bd5fa6322bda625f2ab
+
+``` git clone https://github.com/IvanoskiHarmonia/Copy-By-Click ```
 
 ---
 
 ## Populate
 
-Simple and easy way to do it is as the example in the bottom of the index.html file, array variable is called contents, just populate it the same way it's populated and you will get what you were hoping for
+- Simple and easy way to do it is as the example in the bottom of the index.html file, array variable is called ```contents``` on line **53 to 57**. 
+- Just populate it the same way it's populated in the example.
 
+<<<<<<< HEAD
 ---
 
 ## Usage
@@ -62,3 +82,8 @@ Simple and easy way to do it is as the example in the bottom of the index.html f
 - It helps you truck how much have you done over time. Add slashes with a press of ```Spacebar```. **It works everywhere except when input box is focused**. When #U in / has 5 slashes, it adds 5 to #U and gives empty #U in / cell.
 
 - Another feature is ```Backspace``` - when you press backspace it will allow you to delete slashes anywhere on the page, **except when input box is focused**
+=======
+## How to Test
+
+- Easiest way to test it is to open a new tab: ```Ctrl+T```, go back to this site, click on any of the lines of text, and go back to that tab and just press ```Ctrl+V```.
+>>>>>>> 78e054136a868e6614610bd5fa6322bda625f2ab
