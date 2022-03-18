@@ -1,6 +1,6 @@
 # Copy by click
 
-> Note 1: it's not made to be aesthetically pleasing, the only purpose of this repository is functionality.
+> Note 1: it's not made to be aesthetically pleasing, the only purpose of this repository is functionality. 
 
 > Note 2: it only copies the part after the ```:``` - **colon**.
 
