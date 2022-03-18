@@ -22,7 +22,7 @@
 ### no Git Bash
 
 
-I would say the best way to get this app for people that do not have git bush would be:
+I would say the best way to get this app for people that do not have git bash would be:
 
 
 - Search bar on your computer and type ```Notepad```, and open one,
@@ -38,7 +38,7 @@ I would say the best way to get this app for people that do not have git bush wo
 ### Git Bash
 
 
-If you have installed ```Git Bush```, by now I would guess that you already know at least a little bit about programming, and how to use it, so in that case:
+If you have installed ```Git Bash```, by now I would guess that you already know at least a little bit about programming, and how to use it, so in that case:
 
 
 ``` git clone https://github.com/IvanoskiHarmonia/copy-by-click ```
@@ -55,10 +55,10 @@ Simple and easy way to do it is as the example in the bottom of the index.html f
 
 ### Input text
 
-- It turns every text into uppercase letters, and selects the whole text. This usage is useful for multiple reasons, but in my case I need turned lowercase letter into uppercase for data entry.
+- It turns all text into uppercase letters, and selects the whole text. This is primaraly for turning lowercase letters into uppercase ones, for data entry.
 
 ### Table
 
-- It helps you truck how much have you done over time. Add slashes with a press of ```Spacebar```. **It works everywhere except when input box is focused**. When #U in / has 5 slashes, it adds 5 to #U and gives empty #U in / cell.
+- It helps you track how much each task takes you. Add slashes with a press of ```Spacebar```. **It works everywhere except when input box is focused**. When #U in / has 5 slashes, it adds 5 to #U and gives empty #U in / cell.
 
-- Another feature is ```Backspace``` - when you press backspace it will allow you to delete slashes anywhere on the page, **except when input box is focused**
+- Another feature is: ```Backspace``` - when you press backspace it will allow you to delete slashes, **It works everywhere except when input box is focused**
