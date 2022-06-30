@@ -127,3 +127,4 @@ If you want to change the copying section just go to script.js file in **src -> 
 - On top right corner, you will see that there's a toogle switch that allows you to switch from dark to light and vice-versa
 
 ![Toogle Switch](https://github.com/ivanoskiHarmonia/Copy-By-Click/blob/main/src/pictures/ToggleSwitch.jpg?raw=true)
+![Toogle Switch](https://github.com/ivanoskiHarmonia/Copy-By-Click/blob/main/src/pictures/ToggleSwitchLight.jpg?raw=true)
