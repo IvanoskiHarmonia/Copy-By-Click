@@ -1,64 +1,127 @@
 # Copy by click
 
-> Note 1: it's not made to be aesthetically pleasing, the only purpose of this repository is functionality. 
+  
 
-> Note 2: it only copies the part after the ```:``` - **colon**.
+- The easiest way to click and copy and track records for different things
 
-- The easiest way to click and copy
+  
+  
+
+![Copy By Click](https://github.com/ivanoskiHarmonia/Copy-By-Click/blob/main/src/pictures/Track_&_Copy_.png?raw=true)
+
+  
+  
 
 ## Table of contents
 
-- [How To Download](@how-to-download)
+  
 
-- [Populate](@populate)
+- [How To Download](@How-To-Download)
 
-- [Usage](@usage)
+  
+
+- [Populate](@Populate)
+
+  
+
+- [Usage](@Usage)
+
+  
 
 ---
+
+  
 
 ## How To Download
 
+  
+  
 
 ### no Git Bash
 
+  
+  
 
-I would say the best way to get this app for people that do not have git bash would be:
+The easiest and most reliable to download this without Git Bash is:
 
+  
 
-- Search bar on your computer and type ```Notepad```, and open one,
-
-- then go back to the **index.html** on my repository and press ```Ctrl+A``` and follow with pressing ```Ctrl+C```, this will copy the whole code of the **index.html** file
-
-- Now go and paste the clipboard to the ```Notepad```, and just save the file anywhere you want it with the name of: **index.html**, the name doesn't necessarily need to be **index**, but the extension **.html** needs to be included.
-
-
-> Note: This way the favicon(**icon**) of this site won't work, but it won't affect anything else.
-
+- Right above where all the files are located you will see ```Code``` button right next to the buttons ```Go to file``` and ```Add file```, press it, then ```Download ZIP``` will appear at the bottom of the small window, click that and it will download the files into your downloads folder on your local machine.
+  
+ 
+ 
 
 ### Git Bash
 
+  
+  
 
 If you have installed ```Git Bash```, by now I would guess that you already know at least a little bit about programming, and how to use it, so in that case:
 
+  
+  
 
 ``` git clone https://github.com/IvanoskiHarmonia/copy-by-click ```
 
+  
+
+or
+
+  
+  ``` git clone https://github.com/IvanoskiHarmonia/copy-by-click ```
+  
+
 ---
+
+  
 
 ## Populate
 
-Simple and easy way to do it is as the example in the bottom of the index.html file, array variable is called contents, just populate it the same way it's populated and you will get what you were hoping for
+  
+
+You can populate the table by opening the script.js file in the **src -> js -> script.js** directory, and then using the shortcut ```CTRL+F``` and type: ```change below to change the table```, to find the part where the population of the table is, then use the already added template to create a table of your own liking, finally just save the script.js file.
+
+  
+
+If you want to change the copying section just go to script.js file in **src -> js -> script.js** directory, and then using the shortcut ```CTRL+F``` and type: ```change below to change the copying section```, to find the part where the copying section contents is, then use the already added template to create a copying section of your own liking, finally just save the script.js file.
+
+  
+
+![Populate Table and Copying](https://github.com/ivanoskiHarmonia/Copy-By-Click/blob/main/src/pictures/populatingPic.png?raw=true)
+
+  
 
 ---
 
+  
+
 ## Usage
+
+  
+
+### Text for copying
+
+  
+
+- it only copies the part after the ```:``` - **colon**.
+
+  
 
 ### Input text
 
+  
+
 - It turns all text into uppercase letters, and selects the whole text. This is primaraly for turning lowercase letters into uppercase ones, for data entry.
+
+  
 
 ### Table
 
-- It helps you track how much each task takes you. Add slashes with a press of ```Spacebar```. **It works everywhere except when input box is focused**. When #U in / has 5 slashes, it adds 5 to #U and gives empty #U in / cell.
+  
 
-- Another feature is: ```Backspace``` - when you press backspace it will allow you to delete slashes, **It works everywhere except when input box is focused**
+- Use the arrow up and arrow down to increase the value of the number (it also can be done by just writing any number in the textbox area) -> the number cannot be below 0.
+
+
+### Dark and Light mode
+
+- on top right screen you will see that there's a toogle switch that allows you to switch from dark to light and vice-versa

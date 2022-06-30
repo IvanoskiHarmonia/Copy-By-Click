@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="src/css/style.css">
+
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css"></link>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,111 +13,10 @@
     <link rel="shortcut icon" href="src/logo/favicon.ico" type="image/x-icon">
     <link rel="manifest" href="src/logo/site.webmanifest">
 
+    <!-- Jquery link minified -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
     <title>Copying Machine</title>
-
-    <style>
-
-        body, html {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-        main {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: horizontal;
-            -webkit-box-direction: normal;
-                -ms-flex-direction: row;
-                    flex-direction: row;
-            -webkit-box-align: center;
-                -ms-flex-align: center;
-                    align-items: center;
-            -webkit-box-pack: center;
-                -ms-flex-pack: center;
-                    justify-content: center;
-            height: 100%;
-        }
-        section {
-            width: 100%;
-        }
-        * {
-            font-family: 'Times New Roman', Times, serif;
-        }
-
-        ._copy {
-            cursor: pointer;
-            margin: 0;
-            padding: 0;
-            word-wrap: break-word;
-            text-justify: newspaper;
-            line-break: strict;
-            line-height: 24px;
-            font-size: 20px;
-            width: -webkit-fit-content;
-            width: -moz-fit-content;
-            width: fit-content;
-            height: -webkit-fit-content;
-            height: -moz-fit-content;
-            height: fit-content;
-        }
-        ._copy:hover {
-            border: 1px dashed burlywood;
-        }
-        ._copy:active {
-            border: 1px solid rgb(224, 64, 23);
-        }
-        
-        #textHelperInput {
-            width: -webkit-fit-content;
-            width: -moz-fit-content;
-            width: 80%;
-            height: -webkit-fit-content;
-            height: -moz-fit-content;
-            height: fit-content;
-            margin: 1px;
-            padding: 5px;
-            font-size: 50px;
-            border: 1px solid burlywood;
-            border-radius: 5px;
-            background-color: #f5f5f5;
-            color: #000;
-            outline: none;
-            text-transform: uppercase;
-        }
-
-        /*
-            create a table that will something like this:
-            ------------------------------------------------
-            |  date  |     #U      |           #U in /     |
-            ------------------------------------------------
-            |  date  |     25      |           ////        |
-            ------------------------------------------------
-        */
-
-        table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-        }
-        
-        td, th {
-            border: 1px solid rgb(92, 71, 45);
-            text-align: center;
-            padding: 8px;
-            font-size: 20px;
-        }
-        
-        tr:nth-child(even) {
-            background-color: burlywood;
-        }
-
-        #counter-Slashes {
-            font-weight: bold;
-        }
-
-    </style>
-
 </head>
 <body>
 
@@ -120,9 +24,16 @@
 
     <!-- Main text features that are shown on the screen. -->
 
+    <header>
+        <nav>
+            <label class="switch">
+                <input onclick="mode()" id="slider-mode" type="checkbox" checked>
+                <span class="slider round"></span>
+              </label>
+        </nav>
+    </header>
 
-
-    <main>
+    <main class="dark-mode">
 
         <section>
             <div id="container"></div>
@@ -131,26 +42,15 @@
         </section>
 
         <section>
-            <table id="table">
-
-                <tr>
-                    <th>Date</th>
-                    <th>#U</th>
-                    <th>#U in /</th>
-                </tr>
-
-                <tr>
-                    <td id="date-Table"></td>
-                    <td id="counter-Table"></td>
-                    <td id="counter-Slashes"></td>
-                </tr>
-
-                <tr>
-                    <th>Time since last entry</th>
-                    <td id="timeSinceLastEntry"></td>
-                </tr>
-
-            </table>
+			<button onclick="changeArg()" class="changeTable" style="color:inherit">Change Table</button>
+           
+			<div id="container-2"></div>
+			
+            <div class="checkpoint-container">
+				<button onclick="checkpoint()" value="checkpoint" style="color:inherit">Checkpoint</button>
+				<p id="checkPoint-time"></p>
+			</div>
+			
         </section>
 
     </main>
@@ -160,86 +60,6 @@
     <!-- Script part. -->
 
 
-    <script>
-        const currentDate = new Date().toISOString().slice(0, 10);
-        const date = `${currentDate.slice(5, 7)}-${currentDate.slice(8, 10)}-${currentDate.slice(0, 4)}`;
-        
-        
-        //populate the array as needed, as demonstated in the example below
-        //copies only the second element in each array when clicked.
-        let contents = [
-            [ 'name', 'ivanoskiHarmonia'],
-            [ 'date', date],
-            [ 'none', 'N/A'],
-        ];
-
-        window.onload = () => {
-            const html = contents.map(content => {
-                return '<p class="_copy" id="' + content[0] + '" onclick="copyElementText(this.id)">' + content[0] + ': ' + content[1] + '</p>';
-            })   
-
-            setInterval(timerSinceLastEntry, 1000);
-
-            document.getElementById('container').innerHTML = html.join('');
-        }
-
-        async function copyElementText(id) {
-            var text = document.getElementById(id).innerText;
-            var elem = document.createElement("textarea");
-            document.body.appendChild(elem);
-            elem.value = text.substr(id.length+2);
-            elem.select();
-            document.execCommand("copy");
-            document.body.removeChild(elem);
-            document.title = id + ' Copied';
-        }
-
-        //Functions are used to update the table and the counter.
-
-        let counter = 0;
-
-        document.getElementById("date-Table").innerHTML = date;
-        const counterTable = document.getElementById("counter-Table");
-        counterTable.innerHTML = counter;
-
-        const counterSlashes = document.getElementById("counter-Slashes");
-
-        const textHelperInput = document.getElementById("textHelperInput");
-
-        // function to update the counter and the table, but not when input box is focused - in case we need to write something with space and it updates or deletes a slash unintentionally.
-        document.body.onkeyup = (element) => {
-            if (textHelperInput !== document.activeElement && (element.keyCode === 32 || element.key === ' ')) {
-                counterSlashes.innerHTML = counterSlashes.innerHTML + '/';
-                hours = minutes = 0; seconds = -1;
-
-                // simple explanation: if there are more than 4 slashes, it will remove them all and add 5 to the counter.
-                if (counterSlashes.innerHTML === '/////'){
-                    counterSlashes.innerHTML = '';
-                    counter += 5;
-                    counterTable.innerHTML = counter;
-                }
-            }
-            if (textHelperInput !== document.activeElement && (element.keyCode === 	8 || element.key === 'Backspace')) {
-                counterSlashes.innerHTML = counterSlashes.innerHTML.slice(0, -1);
-            }
-        }
-
-        // easy way to declare variables, but not the best way, it is not a good practice.
-        // prevents readibility which is big part in big project, but in projects like this it's fine to use it.
-        let hours = minutes = seconds = 0;
-
-        let timeSinceLastEntry = document.getElementById("timeSinceLastEntry");
-        timeSinceLastEntry.innerHTML = (hours < 10 ? ('0' + hours) : hours) + ' : ' + (minutes < 10 ? ('0' + minutes) : minutes) + ' : ' + (seconds < 10 ? ('0' + seconds) : seconds);
-
-        // function to update the time since last entry.
-        function timerSinceLastEntry() {
-            seconds += 1;
-
-            if (seconds > 59) { minutes += 1; seconds = 0; }
-            if (minutes > 59) { hours += 1; minutes = 0; }
-
-            timeSinceLastEntry.innerHTML = (hours < 10 ? ('0' + hours) : hours) + ' : ' + (minutes < 10 ? ('0' + minutes) : minutes) + ' : ' + (seconds < 10 ? ('0' + seconds) : seconds);
-        }
-    </script>
+    <script src="src/js/script.js"></script>
 </body>
 </html>

@@ -1,0 +1,315 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    text-shadow: 0px 1px 5px #ffffff9a;
+}
+
+/* Navbar Start */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 10000 !important;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+
+
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f185";
+    height: 22px;
+    width: 30px;
+    left: 10px;
+    bottom: 3px;
+    /* background-color: white; */
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f186";
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* Modes */
+
+.light-mode {
+    background-color: #f9fcff;
+    background-image: linear-gradient(147deg, #f9fcff 0%, #dee4ea 74%);
+    color: #000;
+}
+.dark-mode {
+    background-color: #000000;
+    background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
+    color: white;
+}
+
+/* Modes END */
+
+
+
+/* Navbar End */
+
+
+
+
+
+
+
+
+
+
+main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 100%;
+
+    /* background-color: #000000;
+    background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%); */
+}
+@media (max-width: 768px) {
+    main {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+    #textHelperInput {
+        width: 95% !important;
+    }
+}
+
+section {
+    width: 100%;
+}
+* {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+/* Copy and text-input css section starts here  */
+
+._copy {
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    /* color:white; */
+    word-wrap: break-word;
+    text-justify: newspaper;
+    line-break: strict;
+    line-height: 24px;
+    font-size: 20px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+}
+._copy:hover {
+    border: 1px dashed burlywood;
+}
+._copy:active {
+    border: 1px solid rgb(224, 64, 23);
+}
+
+#textHelperInput {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: 90%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin: 1px;
+    padding: 5px;
+    font-size: 50px;
+    border: 2px solid burlywood;
+    border-radius: 5px;
+    background-color: #f5f5f57a;
+    outline: none;
+    text-transform: uppercase;
+}
+#textHelperInput:hover {
+    cursor:none;
+}
+
+/* Copy and text-input css section ends here  */
+
+
+/*
+    create a table that will something like this:
+    ------------------------------------------------
+    |  date  |     #U      |           #U in /     |
+    ------------------------------------------------
+    |  date  |     25      |           ////        |
+    ------------------------------------------------
+*/
+
+/* Table CSS starts here */
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    /* color:white; */
+    border-radius:3px;
+    border-style: hidden;
+    box-shadow: 0 0 0 1px #666;
+    margin:2px 0;
+}
+
+td, th {
+    border: 2px solid rgb(112, 91, 65);
+    text-align: center;
+    padding: 8px;
+    font-size: 20px;
+}
+
+tr:nth-child(even) {
+    background-color: burlywood;
+}
+
+#counter-Slashes {
+    font-weight: bold;
+}
+td input {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+input[type=number] {
+    width:50%;
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+   opacity: 1;
+}
+.inputPadNone {
+    padding: 0;
+    margin:0;
+    width:50%;
+}
+
+
+
+.changeTable{
+    display:flex;
+    padding:0.3em 1.2em;
+    margin: 5px auto;
+    border:0.16em solid rgba(255,255,255,0);
+    border-radius:1em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    /* color:#FFFFFF; */
+    text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+    text-align:center;
+    transition: all 0.2s;
+    background-color:#f1bb4e
+}
+.changeTable:hover{
+    border-color: rgba(255,255,255,0.8);
+}
+@media all and (max-width:30em){
+    .changeTable{
+        display:block;
+        margin:0.2em auto;
+    }
+    
+}
+
+
+
+
+
+
+.checkpoint-container {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+.checkpoint-container p {
+    text-align: center;
+}
+.checkpoint-container button {
+    background-color: burlywood;
+    border-radius: 3px;
+    transition: 0.3s border;
+}
+.checkpoint-container button:hover {
+    border:2px solid white;
+}
+/* Table CSS ends here */
+
+
