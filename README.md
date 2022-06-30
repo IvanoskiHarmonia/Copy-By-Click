@@ -103,7 +103,7 @@ If you want to change the copying section just go to script.js file in **src -> 
 
   
 
-- it only copies the part after the ```:``` - **colon**.
+- It only copies the part after the ```:``` - **colon**.
 
   
 
@@ -124,4 +124,6 @@ If you want to change the copying section just go to script.js file in **src -> 
 
 ### Dark and Light mode
 
-- on top right screen you will see that there's a toogle switch that allows you to switch from dark to light and vice-versa
+- On top right corner, you will see that there's a toogle switch that allows you to switch from dark to light and vice-versa
+
+![Toogle Switch](https://github.com/ivanoskiHarmonia/Copy-By-Click/blob/main/src/pictures/ToggleSwitch.jpg?raw=true)
